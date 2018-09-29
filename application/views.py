@@ -965,11 +965,6 @@ def authorized(resp):
  
     res = json.loads(res.read())
 
-    if res['email'] not in ['testing.iviz@gmail.com','ankurbhargava87@gmail.com','divya.sj@flipkart.com','anirudh.anand@flipkart.com']:
-        redirect_url = "login.html"
-        session.pop('access_token', None)
-        return render_template(redirect_url,message="User not authorized to view this resource.",category="warning"), 403
-
     session['email'] = res['email']
     session['name'] = res['name']
     session['picture'] = res['picture']
