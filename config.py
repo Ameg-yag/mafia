@@ -4,17 +4,31 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config(object):
-     
+
+    #-------domain settings---------#
+    HTTPS_PORT = 5443
+    HTTP_PORT = 5000
+    INTERFACE = '0.0.0.0'
+
+    SSL_CERTFILE = '../server.crt'
+    SSL_KEYFILE = '../server.key'
+    
+    #-------domain settings---------#
+
+
+    #-----application settings------#
     SECRET_KEY = 'GIVE VALUE HERE'
     DEBUG = True
     UPLOAD_FOLDER = 'uploads'
     DEFAULT_FOLDER = 'static/default'
+    #-----application settings------#
 
     #-------oauth settings---------#
     OAUTH_CLIENT = 'google'
 
     GOOGLE_CLIENT_ID = '1051524488482-9p4r4sbo0vcs5b2k2kdsh377o6p0e1sd.apps.googleusercontent.com'
     GOOGLE_CLIENT_SECRET = 'lDQimvLLD4FkDAExqDKetm5v'
+    
     REDIRECT_URI = '/oauth2callback'  # one of the Redirect URIs from Google APIs console
 
     BASE_URL='https://www.google.com/accounts/'

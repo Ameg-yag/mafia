@@ -7,18 +7,31 @@ Mobile applications are really critical when it comes to vulnerabilities in prod
 - Perform end to end Security testing for a given mobile app.
 - Create a self serve tool for developers and security engineers.
 
-#### How to use it:
+#### How to install Mafia:
 
 - `https://github.com/Flipkart-Incubator/Mafia.git` or download the zip
 - `pip install -r requirements.txt`
+
+#### Running Mafia:
+
 - `python run.py` -> http://server_ip:5000
+
 
 ##### Things to do before running:
 
 - in **config.py**
     - update values for GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, SECRET_KEY etc
-- in **run.py** 
+
+- in **config.py** 
     - edit the port of the app (Default: 5000)
+
+#### For HTTPS Support:
+
+- Generate or procure an SSL certificate and keyfile
+- move the certificate and key file to mafia server.
+- update the Domain settings in `config.py` file (HTTPS port, certificate path, key file path etc)
+- uncomment the `HTTPS` section in `run.py` file and make sure to comment out the `HTTP` section.
+
 
 ##### TROUBLESHOOTS :
 
